@@ -1,0 +1,57 @@
+.ReaderPage { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+} 
+
+.textform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 550px;
+    width: 500px;
+    background-color: #f4f4f4; 
+
+}
+h1{
+    margin: 0px;
+}
+
+#readerInfo{
+    margin: 20px 0; 
+}
+
+#readerInfo p { 
+    margin: 5px 0; 
+} 
+
+#libraryBooks { 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    border-radius: 15px; 
+    background-color: #f9f9f9; 
+    width: 80%; 
+    margin: 0 auto; 
+} 
+
+#booksList { 
+    height: 200px;
+    overflow-y: scroll;
+    list-style-type: none; 
+    padding: 0; 
+} 
+
+#booksList li { 
+    margin-bottom: 10px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    background-color: #fff; 
+} 
