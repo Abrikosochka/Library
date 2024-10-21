@@ -1,34 +1,109 @@
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Импортируем useNavigate
+import { supabase } from "../SupaBase/supabaseClient";
 import './login.css';
 
 function Login() {
+  const [username, setUsername] = useState('abrakadabra');
+  const [password, setPassword] = useState('abrakadabra');
+  const [dob, setDob] = useState('');
+  const [role, setRole] = useState(false);
+  const [users, setUsers] = useState([]);
+  
+  const navigate = useNavigate(); // Хук для навигации
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data, error } = await supabase
+        .from('users') 
+        .select();
+    
+      if (error) {
+        console.error('Error fetching data:', error);
+      } else {
+        setUsers(data);
+        localStorage.setItem('users', JSON.stringify(data));
+      }
+    };
+    
+    fetchData();
+  }, []);
+
+  const handleSignUp = (e) => {
+
+  }
+
+  const handleSignIn = (e) => {
+    e.preventDefault(); // предотвращаем перезагрузку страницы
+    
+    const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+    
+    console.log(storedUsers);
+    console.log(username);
+    console.log(password);
+    console.log(role);
+
+    const user = storedUsers.find(
+      user =>
+        user.login === username &&
+        user.password === password &&
+        user.is_librarian === role
+    );
+    
+    if (user) {
+      alert(`Welcome, ${username}!`);
+      // Перенаправить на соответствующую страницу в зависимости от роли
+      if (role === true) {
+        navigate('/librarian'); // Используйте navigate для перенаправления
+      } else if (role === false) {
+        navigate('/reader'); // Используйте navigate для перенаправления
+      }
+    } else {
+      alert('Incorrect username, password, or role.');
+    }
+  };
+
   return (
     <div className="Login">
-        <div className='textforms'>
-            <h3>Sign in Library</h3>
-            <div className='inputs'>
-                <p>Input Username</p>
-                <input type='text' id='input'/>
-                <p>Input password</p>
-                <input type='text' id='input'/>
-                <p>Input Date of birth</p>
-                <input type="date" id="input"/>
-            </div>
-            <div className='checkboxes'>
-                <p>Check role:</p>
-                <div>
-                    <input type='radio' name='radio'/>
-                    <label for='librarian'>Librarian</label>
-                </div>
-                <div>
-                    <input type='radio' name='radio'/>  
-                    <label for='reader'>Reader</label>  
-                </div>
-            </div>
-            <div className='buttons'>
-                <button>Sign in</button>
-                <button>Sign up</button>
-            </div>
-        </div>
+      <div className='textforms'>
+        <h3>Sign in Library</h3>
+          <div className='inputs'>
+            <p>Input Login</p>
+            <input
+              type='text'
+              id='input'
+              value={username} // Связываем значение с состоянием
+              onChange={(e) => setUsername(e.target.value)} // Обновляем состояние
+            />
+            <p>Input password</p>
+            <input
+              type='password' // Устанавливаем тип как password
+              id='input'
+              value={password} // Связываем значение с состоянием
+              onChange={(e) => setPassword(e.target.value)} // Обновляем состояние
+            />
+          </div>
+          <div className='checkboxes'>
+            <p>Check role:</p>
+            <input
+                type='radio'
+                name='role' // Измените на 'role', чтобы избежать конфликта
+                value='librarian' // Установите значение для роли
+                onChange={(e) => setRole(true)} // Обновляем состояние=
+            />
+            <p>Librarian</p>
+            <input
+                type='radio'
+                name='role' // Измените на 'role', чтобы избежать конфликта
+                value='reader' // Установите значение для роли
+                onChange={(e) => setRole(false)} // Обновляем состояние
+            />
+            <p>Reader</p>
+          </div>
+          <div className='buttons'>
+            <button type="button" onClick={handleSignIn}>Sign in</button> {/* Замените на submit */}
+          </div>
+      </div>
     </div>
   );
 }
