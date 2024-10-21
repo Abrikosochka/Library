@@ -1,9 +1,9 @@
-.container{
+.containerAdds{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 70vh;
 }
 .userinput{
     display: flex;
@@ -22,7 +22,7 @@
     margin: 0px;
     padding: 0px;
 }
-.popupBox{
+.fromAdds{
     margin-left: 2%;
     margin-right: 2%;
     background-color: white;
@@ -59,4 +59,63 @@
     color: white;
     border-radius: 5px;
     text-align: center;
+}
+
+.Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.AbsolutInfoContainer{
+    background: white;
+    width: 80%;
+    border-radius: 8px;
+    border:2px solid black;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.AbsolutInfo{
+    padding: 20px;
+    }
+
+.containerInfo{
+    padding: 20px 0px 20px 20px;
+    height: 20vh;    
+    overflow-y: scroll;
+}   
+
+#formContainerInfo {
+    margin: 0;
+}
+
+.fromTitle {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.fromInfo {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Разделите на 5 столбцов для всех меток */
+    gap: 10px;
+    padding: 10px;
+}
+
+label {
+    font-size: 1em;
+    color: #555;
+    text-align: left; /* Выравниваем текст по левому краю */
+}
+p{
+    margin: 2px;  
+}
+.buttonEdit{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
