@@ -10,6 +10,8 @@ function Login() {
                 <input type='text' id='input'/>
                 <p>Input password</p>
                 <input type='text' id='input'/>
+                <p>Input Date of birth</p>
+                <input type="date" id="input"/>
             </div>
             <div className='checkboxes'>
                 <p>Check role:</p>

@@ -1,71 +1,62 @@
-body{
-    margin: 20px;
-    padding: 20px;
-    background-color: rgb(236, 158, 255);
-}
-h1{
-    text-align: center;
-}
-h3{
-    text-align: center;
-}
 .container{
-    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
-table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-th{
-    border: 1px solid;
-    padding: 8px;
-    text-align: left;
-}
-tr{
-    border: 1px solid;
-    padding: 8px;
-    text-align: left;
-}
-button{
-    margin: 10px 10px 10px 0px;
-    background-color: #cfe5e3;
-    border-radius: 5px;
-    padding: 0.4%;
-    max-width: 20%;
-    min-width: 10%;
-}
-button:hover{
-    background-color: #b3dbd8;
-    box-shadow: 0px 0px 100px 53px rgba(0, 251, 230, 0.15);
-}
-button:active{
-    background-color: #3f7470;
-    box-shadow: 0px 0px 100px 53px rgba(26, 251, 0, 0.15);
-}
-.popupBox{
+.userinput{
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    align-items: center;
+}
+.btnP:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.btnP:active{
+    background-color: black;
+    border: 1px solid black;
+}
+#formTitle{
+    margin: 0px;
+    padding: 0px;
+}
+.popupBox{
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 400px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
     align-items: center;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-left: 30%;
-    margin-right: 30%;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
-input{
-    max-width: 50%;
-    min-width: 50%;
+.popupBox input{
+    height: 20px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .buttonsPopup{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    gap: 20px;
 }
 .btnP{
-    min-width: 100%;
-    margin-top: 20%;
+    width: 80px;
+    padding: 5px;
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
 }
