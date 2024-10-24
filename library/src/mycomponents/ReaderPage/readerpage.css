@@ -1,9 +1,10 @@
 .ReaderPage { 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    gap: 20px;
 } 
 
 .textform{
@@ -13,7 +14,7 @@
     align-items: center;
     border-radius: 10px;
     height: 550px;
-    width: 500px;
+    width: 1300px;
     background-color: #f4f4f4; 
 
 }
@@ -38,7 +39,7 @@ h1{
     padding: 10px; 
     border-radius: 15px; 
     background-color: #f9f9f9; 
-    width: 80%; 
+    width: 350px; 
     margin: 0 auto; 
 } 
 
@@ -55,3 +56,9 @@ h1{
     border: 1px solid #ccc; 
     background-color: #fff; 
 } 
+
+.tabels{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
