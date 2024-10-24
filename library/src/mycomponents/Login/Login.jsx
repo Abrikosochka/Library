@@ -4,51 +4,45 @@ import { supabase } from "../SupaBase/supabaseClient";
 import './login.css';
 
 function Login() {
-  const [username, setUsername] = useState('abrakadabra');
-  const [password, setPassword] = useState('abrakadabra');
-  const [dob, setDob] = useState('');
-  const [role, setRole] = useState(false);
-  const [users, setUsers] = useState([]);
+  const [username, setUsername] = useState('введите');
+  const [password, setPassword] = useState('введите');
+  const [role, setRole] = useState();
   
   const navigate = useNavigate(); // Хук для навигации
 
   useEffect(() => {
+    
+ 
+  }, []);
+
+
+  const handleSignIn = (e) => {
+
     const fetchData = async () => {
       const { data, error } = await supabase
         .from('users') 
-        .select();
-    
-      if (error) {
-        console.error('Error fetching data:', error);
-      } else {
-        setUsers(data);
-        localStorage.setItem('users', JSON.stringify(data));
-      }
+        .select()
+        .eq('login', username)
+        .eq('password', password)
+
+        console.log(data);
+        console.log(username);
+        console.log(password);
+
+        if (error) {
+          console.error('Error fetching data:', error);
+        } else {
+          localStorage.setItem('users', JSON.stringify(data));
+        }
     };
-    
+   
     fetchData();
-  }, []);
 
-  const handleSignUp = (e) => {
-
-  }
-
-  const handleSignIn = (e) => {
     e.preventDefault(); // предотвращаем перезагрузку страницы
     
     const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
-    
-    console.log(storedUsers);
-    console.log(username);
-    console.log(password);
-    console.log(role);
 
-    const user = storedUsers.find(
-      user =>
-        user.login === username &&
-        user.password === password &&
-        user.is_librarian === role
-    );
+    const user = storedUsers[0];
     
     if (user) {
       alert(`Welcome, ${username}!`);
