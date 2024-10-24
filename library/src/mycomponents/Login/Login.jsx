@@ -48,9 +48,11 @@ function Login() {
       alert(`Welcome, ${username}!`);
       // Перенаправить на соответствующую страницу в зависимости от роли
       if (role === true) {
-        navigate('/librarian'); // Используйте navigate для перенаправления
+        navigate('/librarian');
+        window.location.reload(); // Используйте navigate для перенаправления
       } else if (role === false) {
         navigate('/reader'); // Используйте navigate для перенаправления
+        window.location.reload();
       }
     } else {
       alert('Incorrect username, password, or role.');
