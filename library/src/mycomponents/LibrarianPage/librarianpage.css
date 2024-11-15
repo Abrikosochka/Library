@@ -1,0 +1,121 @@
+.containerAdds{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+.userinput{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btnP:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.btnP:active{
+    background-color: black;
+    border: 1px solid black;
+}
+#formTitle{
+    margin: 0px;
+    padding: 0px;
+}
+.fromAdds{
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 400px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+.popupBox input{
+    height: 20px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.buttonsPopup{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+.btnP{
+    width: 80px;
+    padding: 5px;
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.AbsolutInfoContainer{
+    background: white;
+    width: 80%;
+    border-radius: 8px;
+    border:2px solid black;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.AbsolutInfo{
+    padding: 20px;
+    }
+
+.containerInfo{
+    padding: 20px 0px 20px 20px;
+    height: 20vh;    
+    overflow-y: scroll;
+}   
+
+#formContainerInfo {
+    margin: 0;
+}
+
+.fromTitle {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.fromInfo {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Разделите на 5 столбцов для всех меток */
+    gap: 10px;
+    padding: 10px;
+}
+
+label {
+    font-size: 1em;
+    color: #555;
+    text-align: left; /* Выравниваем текст по левому краю */
+}
+p{
+    margin: 2px;  
+}
+.buttonEdit{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}

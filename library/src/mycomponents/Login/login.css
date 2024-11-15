@@ -1,0 +1,60 @@
+.Login{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.textforms{
+    text-align: center;   
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black; 
+    height: 450px;
+    width: 400px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+.checkboxes{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.buttons{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.buttons button{
+    width: 170px;
+    height: 30px;
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.buttons button:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.buttons button:hover{
+    background-color: black;
+    border: 1px solid black;
+}
+
+#input{
+    height: 25px;
+    width: 100%;
+    border-radius: 5px;
+}
